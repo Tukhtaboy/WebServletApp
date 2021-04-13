@@ -20,14 +20,14 @@ public class QuestionDao {
 	}
 
 	public boolean addQuestion(Question qusetion) throws SQLException {
-		String sql = "insert into question(qusetion) value(?)";
+		String sql = "insert into questions(qusetion) value(?)";
 		PreparedStatement statement = dataSourceFactory.getJdbcConnection().prepareStatement(sql);
 		statement.setString(1, qusetion.getQuestion());
 		return statement.execute();
 	}
 
 	public List<Question> getAllQuestions() throws SQLException {
-		String sql = "select id,question from qusetions";
+		String sql = "select id,question from questions";
 		Statement statement = dataSourceFactory.getJdbcConnection().createStatement();
 		ResultSet resultSet = statement.executeQuery(sql);
 		List<Question> list = new ArrayList<>();
@@ -52,7 +52,7 @@ public class QuestionDao {
 	}
 
 	public void update(Question questionObj) throws SQLException {
-		String sql = "update questions set qusetion=? where id=?";
+		String sql = "update questions set question=? where id=?";
 		PreparedStatement statement = dataSourceFactory.getJdbcConnection().prepareStatement(sql);
 		statement.setInt(1, questionObj.getId());
 		statement.setString(1, questionObj.getQuestion());

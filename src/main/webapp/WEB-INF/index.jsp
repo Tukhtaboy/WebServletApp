@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>QuestionForm</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<form action="">
-	<label>Question:</label>
-	<input type="text" name="question">
-	</form>
+Hello
 </body>
 </html>
